@@ -1,77 +1,64 @@
-import React, { useState } from 'react';
+const dropdownBtn = document.querySelector('.dropdown-btn');
+const dropdownContent = document.querySelector('.dropdown-content');
+const monthSelect = document.querySelector('#month');
+const yearSelect = document.querySelector('#year');
 
-// Task Creation component
-const TaskCreation = ({ onTaskCreate }) => {
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+dropdownBtn.addEventListener('click', function() {
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+});
 
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-  };
+document.querySelector('#year').value = currentYear;
+document.querySelector('#month').value = currentMonth;
 
-  const handleTaskCreate = () => {
-    const task = {
-      title,
-      category,
-    };
+function updateButtonText() {
+    const selectedMonth = monthSelect.options[monthSelect.selectedIndex].text;
+    const selectedYear = yearSelect.value;
 
-    onTaskCreate(task);
-    setTitle('');
-    setCategory('');
-  };
+    dropdownBtn.textContent = selectedMonth + ' ' + selectedYear;
+}
 
-  return (
-    <div>
-      <input
-        type="text"
-        value={title}
-        onChange={handleTitleChange}
-        placeholder="Task Title"
-      />
-      <input
-        type="text"
-        value={category}
-        onChange={handleCategoryChange}
-        placeholder="Category"
-      />
-      <button onClick={handleTaskCreate}>Create Task</button>
-    </div>
-  );
-};
+monthSelect.addEventListener('change', updateButtonText);
+yearSelect.addEventListener('change', updateButtonText);
 
-// Task List component
-const TaskList = ({ tasks }) => {
-  return (
-    <div>
-      {tasks.map((task, index) => (
-        <div key={index}>
-          <h3>{task.title}</h3>
-          <p>{task.category}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
 
-// App component
-const App = () => {
-  const [tasks, setTasks] = useState([]);
+// Path: Tasker.js
 
-  const handleTaskCreate = (task) => {
-    setTasks([...tasks, task]);
-  };
+function dateClicked(index) {
+  var dateItems = document.getElementsByClassName('date-item');
+  for (var i = 0; i < dateItems.length; i++) {
+      dateItems[i].classList.remove('active');
+  }
+  dateItems[index].classList.add('active');
 
-  return (
-    <div>
-      <h1>Task Manager</h1>
-      <TaskCreation onTaskCreate={handleTaskCreate} />
-      <TaskList tasks={tasks} />
-    </div>
-  );
-};
+  // Update the content based on the selected date
+  var content = document.querySelector('.main');
+  content.innerHTML = 'Content for ' + dateItems[index].textContent;
+}
+//end of dashboard script
+const timelineContainer = document.querySelector('.timeline-container');
+const content = document.querySelector('.content');
 
-export default App;
+timelineContainer.addEventListener('scroll', function() {
+    const timelineHeight = timelineContainer.clientHeight;
+    const contentHeight = content.clientHeight;
+
+    const scrollTop = timelineContainer.scrollTop;
+    const scrollPercentage = (scrollTop / (contentHeight - timelineHeight)) * 100;
+
+    const tasks = document.querySelectorAll('.task');
+
+    tasks.forEach(task => {
+        const taskPosition = task.offsetTop;
+        const taskHeight = task.offsetHeight;
+
+        if (taskPosition <= scrollTop && taskPosition + taskHeight >= scrollTop) {
+            task.classList.add('active');
+        } else {
+            task.classList.remove('active');
+        }
+    });
+});

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tasker</title>
+        <script type="text/javascript" src="Tasker.js"></script>
+    </head>
+    <!--end of head section-->
+    <link rel="stylesheet" type="text/css" href="tasker.css">
+    <!--start of body-->
+    <body>
+            <!--start of menu-->
+            <div class="menu">
+                <ul>
+                    <li><a href="#"><span class="menu-icon icon-notes"></span></a></li>
+                    <li><a href="#"><span class="menu-icon icon-mail"></span></a></li>
+                    <li><a href="#"><span class="menu-icon icon-share"></span></a></li>
+                    <li><a href="#"><span class="menu-icon icon-settings"></span></a></li>
+                    <li><a href="#"><span class="menu-icon icon-trash"></span></a></li>
+                </ul>
+            </div>
+            <!--end of menu-->
+
+            <!--start of header-->
+            <div class="header">
+                <header>
+                    <!--month-->
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Select Month & Year</button>
+                        <div class="dropdown-content">
+                            <form>
+                                <label for="month">Month:</label>
+                                <select id="month">
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12" selected>December</option>
+                                    <!-- Add more month options as needed -->
+                                </select>
+
+                                <label for="year">Year:</label>
+                                <select id="year">
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023"selected>2023</option>
+                                    <!-- Add more year options as needed -->
+                                </select>
+
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--today-->
+                    <!--week-->
+                    <!--notification-->
+
+                    <div class="notification">
+                        <img src="notification.svg" alt="Notification">
+                    </div>
+                    <!--calendar-->
+                    <div class="calendar">
+                        <img src="calendar.svg" alt="Calendar">
+                    </div>
+                    <div class="divider"></div>
+                    <!--profile-->
+                    <div class="user">
+                        <img src="user.svg" alt="User">
+                    </div>
+                </header>
+            </div>
+            <!--end of header-->
+
+            <!--start of content-->
+            <!--start of dashboard-->
+            <div class="dashboard">
+                <div class="date-container">
+                    <div class="date-item active" onclick="dateClicked(0)">Mon<br>06</br></div>
+                    <div class="date-item" onclick="dateClicked(1)">Tue<br>07</br></div>
+                    <div class="date-item" onclick="dateClicked(2)">Wed<br>08</br></div>
+                    <div class="date-item" onclick="dateClicked(3)">Thu<br>09</br></div>
+                    <div class="date-item" onclick="dateClicked(4)">Fri<br>10</br></div>
+                    <div class="date-item" onclick="dateClicked(5)">Sat<br>11</br></div>
+                    <div class="date-item" onclick="dateClicked(6)">Sun<br>12</br></div>
+                </div>
+            </div>
+            <!--end of dashboard-->
+            <!--start of main-->
+            <div class="main">
+                <!--start of new task-->
+                <div class="new">
+                    <a href="#" class="new">+</a>
+                </div>
+                <!--end of new task-->
+                <!--start of task page-->
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-hour">9 AM</div>
+                        <div class="timeline-hour">10 AM</div>
+                        <div class="timeline-hour">11 AM</div>
+                        <div class="timeline-hour">12 PM</div>
+                        <div class="timeline-hour">1 PM</div>
+                        <div class="timeline-hour">2 PM</div>
+                        <div class="timeline-hour">3 PM</div>
+                        <div class="timeline-hour">4 PM</div>
+                        <div class="timeline-hour">5 PM</div>
+                        <div class="timeline-hour">6 PM</div>
+                        <div class="timeline-hour">7 PM</div>
+                        <div class="timeline-hour">8 PM</div>
+                        <div class="timeline-hour">9 PM</div>
+                        <div class="timeline-hour">10 PM</div>
+                        <div class="timeline-hour">11 PM</div>
+                        <div class="timeline-hour">12 AM</div>
+                        <div class="timeline-hour">1 AM</div>
+                        <div class="timeline-hour">2 AM</div>
+                        <div class="timeline-hour">3 AM</div>
+                        <div class="timeline-hour">4 AM</div>
+                        <div class="timeline-hour">5 AM</div>
+                        <div class="timeline-hour">6 AM</div>
+                        <div class="timeline-hour">7 AM</div>
+                        <div class="timeline-hour">8 AM</div>
+                    </div>
+                    <div class="tasks">
+                        <div class="task important">Important</div>
+                        <div class="task completed">Completed</div>
+                        <div class="task pending">Pending</div>
+                        <div class="task incomplete">Incomplete</div>
+                        <!-- Add more tasks as needed -->
+                    </div>
+                </div>
+            </div>
+            <!--end of main-->
+    </body>
+</html>
