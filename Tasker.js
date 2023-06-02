@@ -1,3 +1,25 @@
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("close").addEventListener("click", closePopup);
+//end of new task window
+//pop up window
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  document.getElementById("close").addEventListener("click", closePopup);
+//end of pop up window
+
 const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownContent = document.querySelector('.dropdown-content');
 const monthSelect = document.querySelector('#month');

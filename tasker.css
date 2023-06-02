@@ -235,6 +235,8 @@ header {
    flex: 1;
    overflow-y: scroll;
    height: 600px;
+   width: auto;
+   display: fixed;
 }
 
 
@@ -263,7 +265,7 @@ header {
 }
 
 .timeline {
-    width: 180px;
+    width: 100px;
     background-color: #161616;
     padding: 10px;
 }
