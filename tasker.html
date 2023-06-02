@@ -71,6 +71,21 @@
 
                     <div class="notification">
                         <img src="notification.svg" alt="Notification">
+                        <div class="modal modal-closed" aria-role="dialog">
+                            <h1>The Modal</h1>
+                            <p>This is the modal. Pressing tab or shift+tab in here will trap focus to the modal, until "OK", "Cancel", or the escape key is pressed. Give it a shot!</p>
+                            <p>Clicking on the overlay will also close the modal. When the modal is closed, focus will be returned to the last element that was focussed before the modal opened.</p>
+                            <p>Here are some links so you can test focus moving around:</p>
+                            <ul>
+                                <li><a href="#">My website</a></li>
+                                <li><a href="#">Your website</a></li>
+                                <li><a href="#">Their website</a></li>
+                                <li><a href="#">Our website</a></li>
+                            </ul>
+                            <button class="modal-close">OK</button>
+                            <button class="modal-close button-cancel">Cancel</button>
+                    </div>
+                    <div class="modal-overlay"></div>
                     </div>
                     <!--calendar-->
                     <div class="calendar">
