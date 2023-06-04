@@ -1,86 +1,71 @@
-function openPopup() {
-    document.getElementById("popup").style.display = "block";
-  }
-
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-
-  document.getElementById("close").addEventListener("click", closePopup);
-//end of new task window
-//pop up window
-function openPopup() {
-    document.getElementById("popup").style.display = "block";
-  }
-
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-
-  document.getElementById("close").addEventListener("click", closePopup);
-//end of pop up window
-
-const dropdownBtn = document.querySelector('.dropdown-btn');
-const dropdownContent = document.querySelector('.dropdown-content');
-const monthSelect = document.querySelector('#month');
-const yearSelect = document.querySelector('#year');
-
-dropdownBtn.addEventListener('click', function() {
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+$(function() {
+			App.init();
 });
-
-const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
-const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
-
-document.querySelector('#year').value = currentYear;
-document.querySelector('#month').value = currentMonth;
-
-function updateButtonText() {
-    const selectedMonth = monthSelect.options[monthSelect.selectedIndex].text;
-    const selectedYear = yearSelect.value;
-
-    dropdownBtn.textContent = selectedMonth + ' ' + selectedYear;
-}
-
-monthSelect.addEventListener('change', updateButtonText);
-yearSelect.addEventListener('change', updateButtonText);
-
-
-// Path: Tasker.js
-
-function dateClicked(index) {
-  var dateItems = document.getElementsByClassName('date-item');
-  for (var i = 0; i < dateItems.length; i++) {
-      dateItems[i].classList.remove('active');
-  }
-  dateItems[index].classList.add('active');
-
-  // Update the content based on the selected date
-  var content = document.querySelector('.main');
-  content.innerHTML = 'Content for ' + dateItems[index].textContent;
-}
-//end of dashboard script
-const timelineContainer = document.querySelector('.timeline-container');
-const content = document.querySelector('.content');
-
-timelineContainer.addEventListener('scroll', function() {
-    const timelineHeight = timelineContainer.clientHeight;
-    const contentHeight = content.clientHeight;
-
-    const scrollTop = timelineContainer.scrollTop;
-    const scrollPercentage = (scrollTop / (contentHeight - timelineHeight)) * 100;
-
-    const tasks = document.querySelectorAll('.task');
-
-    tasks.forEach(task => {
-        const taskPosition = task.offsetTop;
-        const taskHeight = task.offsetHeight;
-
-        if (taskPosition <= scrollTop && taskPosition + taskHeight >= scrollTop) {
-            task.classList.add('active');
-        } else {
-            task.classList.remove('active');
-        }
-    });
-});
+var App = {
+			init: function() {
+						this.datetime(), this.side.nav(), this.search.bar(), this.navigation(), this.hyperlinks(), setInterval("App.datetime();", 1e3)
+			},
+			datetime: function() {
+						var e = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"),
+									t = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+									a = new Date,
+									i = a.getYear();
+						1e3 > i && (i += 1900);
+						var s = a.getDay(),
+									n = a.getMonth(),
+									r = a.getDate();
+						10 > r && (r = "0" + r);
+						var l = a.getHours(),
+									c = a.getMinutes(),
+									h = a.getSeconds(),
+									o = "AM";
+						l >= 12 && (o = "PM"), l > 12 && (l -= 12), 0 == l && (l = 12), 9 >= c && (c = "0" + c), 9 >= h && (h = "0" + h), $(".welcome .datetime .day").text(e[s]), $(".welcome .datetime .date").text(t[n] + " " + r + ", " + i), $(".welcome .datetime .time").text(l + ":" + c + ":" + h + " " + o)
+			},
+			title: function(e) {
+						return $(".header>.title").text(e)
+			},
+			side: {
+						nav: function() {
+									this.toggle(), this.navigation()
+						},
+						toggle: function() {
+									$(".ion-ios-navicon").on("touchstart click", function(e) {
+												e.preventDefault(), $(".sidebar").toggleClass("active"), $(".nav").removeClass("active"), $(".sidebar .sidebar-overlay").removeClass("fadeOut animated").addClass("fadeIn animated")
+									}), $(".sidebar .sidebar-overlay").on("touchstart click", function(e) {
+												e.preventDefault(), $(".ion-ios-navicon").click(), $(this).removeClass("fadeIn").addClass("fadeOut")
+									})
+						},
+						navigation: function() {
+									$(".nav-left a").on("touchstart click", function(e) {
+												e.preventDefault();
+												var t = $(this).attr("href").replace("#", "");
+												$(".sidebar").toggleClass("active"), $(".html").removeClass("visible"), "home" == t || "" == t || null == t ? $(".html.welcome").addClass("visible") : $(".html." + t).addClass("visible"), App.title($(this).text())
+									})
+						}
+			},
+			search: {
+						bar: function() {
+									$(".header .ion-ios-search").on("touchstart click", function() {
+												var e = ($(".header .search input").hasClass("search-visible"), $(".header .search input").val());
+												return "" != e && null != e ? (App.search.html($(".header .search input").val()), !1) : ($(".nav").removeClass("active"), $(".header .search input").focus(), void $(".header .search input").toggleClass("search-visible"))
+									}), $(".search form").on("submit", function(e) {
+												e.preventDefault(), App.search.html($(".header .search input").val())
+									})
+						},
+						html: function(e) {
+									$(".search input").removeClass("search-visible"), $(".html").removeClass("visible"), $(".html.search").addClass("visible"), App.title("Result"), $(".html.search").html($(".html.search").html()), $(".html.search .key").html(e), $(".header .search input").val("")
+						}
+			},
+			navigation: function() {
+						$(".nav .mask").on("touchstart click", function(e) {
+									e.preventDefault(), $(this).parent().toggleClass("active")
+						})
+			},
+			hyperlinks: function() {
+						$(".nav .nav-item").on("click", function(e) {
+									e.preventDefault();
+									var t = $(this).attr("href").replace("#", "");
+									$(".html").removeClass("visible"), $(".html." + t).addClass("visible"), $(".nav").toggleClass("active"), App.title($(this).text())
+						})
+			}
+};

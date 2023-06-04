@@ -1,379 +1,269 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tasker</title>
-        <script type="text/javascript" src="Tasker.js"></script>
-    </head>
-    <!--end of head section-->
-    <link rel="stylesheet" type="text/css" href="tasker.css">
-    <!--start of body-->
-    <body>
-            <!--start of menu-->
-            <div class="menu">
-                <ul>
-                    <li><a href="https://www.google.com/keep"><span class="menu-icon icon-notes"></span></a></li>
-                    <li><a href="https://mail.google.com/mail/"><span class="menu-icon icon-mail"></span></a></li>
-                    <li><a href="#"><span class="menu-icon icon-share"></span></a></li>
-                    <li><a href="#"><span class="menu-icon icon-settings"></span></a></li>
-                    <li><a href="#"><span class="menu-icon icon-trash"></span></a></li>
-                </ul>
-            </div>
-            <!--end of menu-->
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tasker</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,300,700'>
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'><link rel="stylesheet" href="./tasker.css">
 
-            <!--start of header-->
-            <div class="header">
-                <header>
-                    <!--month-->
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Select Month & Year</button>
-                        <div class="dropdown-content">
-                            <form>
-                                <label for="month">Month:</label>
-                                <select id="month">
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12" selected>December</option>
-                                    <!-- Add more month options as needed -->
-                                </select>
+</head>
+<body>
+<div class="mobile-wrap">
+	<div class="mobile clearfix">
+		<div class="header">
+			<span class="ion-ios-navicon pull-left"><i></i></span>
+			<span class="title">Home</span>
+			<span class="ion-ios-search pull-right"></span>
+			<div class="search">
+			<form method="post">
+				<input type="search" placeholder="Search Here">
+			</form>
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="sidebar-overlay"></div>
+			<div class="sidebar-content">
+				<div class="top-head">
+					<div class="name">Morara Dylan</div>
+					<div class="email">contact@moraradylan2gmail.com</div>
+				</div>
+				<div class="nav-left">
+					<a href="#home"><span class="ion-ios-home-outline"></span> Home</a>
+					<a href="#alarm"><span class="ion-ios-list-outline"></span> Alarm</a>
+					<a href="#compose"><span class="ion-ios-compose-outline"></span> Compose</a>
+					<a href="#chats"><span class="ion-ios-chatboxes-outline"></span> Chats</a>
+					<a href="#profile"><span class="ion-ios-person-outline"></span> Profile</a>
+					<a href="#settings"><span class="ion-ios-gear-outline"></span> Settings</a>
+					<a href="#credits"><span class="ion-ios-information-outline"></span> Credits</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="html search">
+				<div class="title bounceInDown animated">Search Result</div>
+				<p class="flipInX animated">Sorry,<br>no matches found for <b class="key"></b></p>
+			</div>
+			<div class="html welcome visible">
+				<div class="datetime">
+					<div class="day lightSpeedIn animated">Thursday</div>
+					<div class="date lightSpeedIn animated">June 18, 2015</div>
+					<div class="time lightSpeedIn animated">08:00 AM</div>
+				</div>
+			</div>
+			<div class="html alarm">
+				<div class="forecast clearfix">
+					<div class="datetime pull-left bounceInLeft animated">
+						<div class="day">Thursday</div>
+						<div class="date">June 18, 2015</div>
+					</div>
+					<div class="temperature pull-right bounceInRight animated">
+						<div class="unit"><span class="ion-ios-sunny-outline"></span> 34<i>&deg;</i></div>
+						<div class="location">Kathmandu, Nepal</div>
+					</div>
+				</div>
+				<div class="alarm-list">
+					<div class="note clearfix slideInRight animated">
+						<div class="time pull-left">
+							<div class="hour">9</div>
+							<div class="shift">AM</div>
+						</div>
+						<div class="to-do pull-left">
+							<div class="title">Finish HTML Coding</div>
+							<div class="subject">Web UI</div>
+						</div>
+					</div>
+					<div class="note clearfix slideInRight animated">
+						<div class="time pull-left">
+							<div class="hour">1</div>
+							<div class="shift">PM</div>
+						</div>
+						<div class="to-do pull-left">
+							<div class="title">Lunch Break</div>
+							<div class="subject"></div>
+						</div>
+					</div>
+					<div class="note clearfix slideInRight animated" data-revert="slideOutRight">
+						<div class="time pull-left">
+							<div class="hour">3</div>
+							<div class="shift">PM</div>
+						</div>
+						<div class="to-do pull-left">
+							<div class="title">Design Stand Up</div>
+							<div class="subject">Hangouts</div>
+							<div class="user-list clearfix">
+								<div class="user pull-left"><img src="https://raw.githubusercontent.com/khadkamhn/secret-project/master/img/usr-i.png"></div>
+								<div class="user pull-left"><img src="https://raw.githubusercontent.com/khadkamhn/secret-project/master/img/usr-ii.png"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="html compose">
+				<div class="forms">
+					<div class="group clearfix slideInRight animated">
+						<label class="pull-left" for="compose-time"><span class="ion-ios-time-outline"></span> Time</label>
+						<input class="pull-right" id="compose-time" type="time">
+					</div>
+					<div class="group clearfix slideInLeft animated">
+						<label class="pull-left" for="compose-date"><span class="ion-ios-calendar-outline"></span> Date</label>
+						<input class="pull-right" id="compose-date" type="date">
+					</div>
+					<div class="group clearfix slideInRight animated">
+						<label class="pull-left" for="compose-title"><span class="ion-ios-paper-outline"></span> Title</label>
+						<input class="pull-right" id="compose-title" type="text">
+					</div>
+					<div class="group clearfix slideInLeft animated">
+						<label class="visible" for="compose-detail"><span class="ion-ios-list-outline"></span> Task</label>
+						<textarea class="visible" id="compose-detail" rows="3"></textarea>
+					</div>
+					<div class="action flipInY animated">
+						<button class="btn">Compose</button>
+					</div>
+				</div>
+			</div>
+			<div class="html chats">
+				<div class="tabs-list clearfix">
+					<a href="#" class="tab active">Users</a>
+					<a href="#" class="tab">Messages</a>
+					<a href="#" class="tab">Groups</a>
+				</div>
+				<div class="active-users">
+					<div class="user clearfix rotateInDownLeft animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">Peter waragi</p>
+							<p class="position">Web &amp; UI Designer</p>
+						</div>
+						<div class="idle pull-right"><span class="away"></span></div>
+					</div>
+					<div class="user clearfix rotateInDownRight animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/markmushiva/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">Jane wanje</p>
+							<p class="position">Front-End Developer</p>
+						</div>
+						<div class="idle pull-right"><span class="offline"></span></div>
+					</div>
+					<div class="user clearfix rotateInDownLeft animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/scottohara/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">David mahali</p>
+							<p class="position">Developer</p>
+						</div>
+						<div class="idle pull-right"><span class="away"></span></div>
+					</div>
+					<div class="user clearfix rotateInDownRight animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/shalt0ni/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">Miguel Cunha Ferreira</p>
+							<p class="position">Sales Manager</p>
+						</div>
+						<div class="idle pull-right"><span class="online"></span></div>
+					</div>
+					<div class="user clearfix rotateInDownLeft animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/sircookieface/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">Eric Yuriev</p>
+							<p class="position">App Developer</p>
+						</div>
+						<div class="idle pull-right"><span class="online"></span></div>
+					</div>
+					<div class="user clearfix rotateInDownRight animated">
+						<div class="photo pull-left">
+							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/ryanmclaughlin/128.jpg">
+						</div>
+						<div class="desc pull-left">
+							<p class="name">Theodore Clark</p>
+							<p class="position">Project Manager</p>
+						</div>
+						<div class="idle pull-right"><span class="online"></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="html settings">
+				<div class="setting-list">
+					<div class="gear clearfix slideInRight animated">
+						<div class="title pull-left">General</div>
+						<div class="action pull-right"><span class="ion-ios-arrow-right"></span></div>
+					</div>
+					<div class="gear clearfix slideInLeft animated">
+						<div class="title pull-left"><label for="gear-notice">Notification</label></div>
+						<div class="action pull-right"><input id="gear-notice" class="on-off" type="checkbox"><label for="gear-notice"></label></div>
+					</div>
+					<div class="gear clearfix slideInRight animated">
+						<div class="title pull-left"><label for="gear-sound">Sound</label></div>
+						<div class="action pull-right"><input id="gear-sound" class="on-off" type="checkbox" checked><label for="gear-sound"></label></div>
+					</div>
+					<div class="gear clearfix slideInLeft animated">
+						<div class="title pull-left">Theme</div>
+						<div class="action pull-right">Standard <span class="ion-ios-arrow-right"></span></div>
+					</div>
+					<div class="gear clearfix slideInRight animated">
+						<div class="title pull-left">Support</div>
+						<div class="action pull-right"><span class="ion-ios-arrow-right"></span></div>
+					</div>
+					<div class="gear clearfix slideInLeft animated">
+						<div class="title pull-left">Privacy</div>
+						<div class="action pull-right"><span class="ion-ios-arrow-right"></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="html profile">
+				<div class="photo flipInX animated">
+					<img src="https://raw.githubusercontent.com/khadkamhn/secret-project/master/img/mohan.png">
+					<div class="social">
+						<a href="https://facebook.com/khadkamhn" class="soc-item soc-count-1"><span class="ion-social-facebook"></span></a>
+						<a href="https://twitter.com/khadkamhn" class="soc-item soc-count-2"><span class="ion-social-twitter"></span></a>
+						<a href="https://github.com/khadkamhn" class="soc-item soc-count-3"><span class="ion-social-github"></span></a>
+						<a href="https://pinterest.com/khadkamhn" class="soc-item soc-count-4"><span class="ion-social-pinterest"></span></a>
+						<a href="https://np.linkedin.com/in/khadkamhn" class="soc-item soc-count-5"><span class="ion-social-linkedin"></span></a>
+						<a href="https://codepen.io/khadkamhn" class="soc-item soc-count-6"><span class="ion-social-codepen"></span></a>
+						<a href="skype:khadkamhn?userinfo" class="soc-item soc-count-7"><span class="ion-social-skype"></span></a>
+						<a href="http://dribbble.com/khadkamhn" class="soc-item soc-count-8"><span class="ion-social-dribbble"></span></a>
+					</div>
+				</div>
+				<div class="details">
+					<p class="heading flipInY animated">
+						<span class="name">Dylan Morara</span><span class="position">Web/Graphic Desiger</span>
+					</p>
+					<p class="text fadeInUp animated">Hi, It's me Dylan from Nairobi. I'm a web and graphics designer. Designing is my passion and I am still learning and developing my skills on graphics designing and coding. I have been working on various designing projects.</p>
+				</div>
+			</div>
+			<div class="html credits">
+				<div class="title flipInY animated">I have been using the following assets to build this design</div>
+				<div class="credit-ol">
+					<div class="credit-li lightSpeedIn animated"><a href="https://www.google.com/fonts/specimen/Roboto" target="_blank">roboto</a> <span>for typography</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="https://jquery.com" target="_blank">jquery</a> <span>for design/ui</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="http://ionicons.com/" target="_blank">ionicons</a> <span>for icons</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="http://uifaces.com/authorized" target="_blank">ui faces</a> <span>for avatar</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="https://daneden.github.io/animate.css/" target="_blank">animate.css</a> <span>for animation</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="https://dribbble.com/shots/1928064-Secret-Project" target="_blank">concept of design</a> <span>for layout</span></div>
+					<div class="credit-li lightSpeedIn animated"><a href="https://unsplash.com/photos/6asyCyR0K1Q/download" target="_blank">unsplash.com</a> <span>for background</span></div>
+				</div>
+				<div class="text zoomInUp animated">I'm glad for using these resources and expecting same as time ahead</div>
+			</div>
+		</div>
+		<div class="nav">
+			<a href="#profile" class="nav-item nav-count-1"><i class="ion-ios-person-outline"></i><span class="invisible">Profile</span></a>
+			<a href="#compose" class="nav-item nav-count-2"><i class="ion-ios-compose-outline"></i><span class="invisible">Compose</span></a>
+			<a href="#chats" class="nav-item nav-count-3"><i class="ion-ios-chatboxes-outline"></i><span class="invisible">Chats</span></a>
+			<a href="#alarm" class="nav-item nav-count-4"><i class="ion-ios-alarm-outline"></i><span class="invisible">Alarm</span></a>
+			<a href="#toggle" class="mask"><i class="ion-ios-plus-empty"></i></a>
+		</div>
+	</div>
+</div>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script><script  src="./Tasker.js"></script>
 
-                                <label for="year">Year:</label>
-                                <select id="year">
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023"selected>2023</option>
-                                    <!-- Add more year options as needed -->
-                                </select>
-
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                    <!--today-->
-                    <!--week-->
-                    <!--notification-->
-
-                    <div class="notification">
-                        <img src="notification.svg" alt="Notification">
-                        <div class="modal modal-closed" aria-role="dialog">
-                            <h1>The Modal</h1>
-                            <p>This is the modal. Pressing tab or shift+tab in here will trap focus to the modal, until "OK", "Cancel", or the escape key is pressed. Give it a shot!</p>
-                            <p>Clicking on the overlay will also close the modal. When the modal is closed, focus will be returned to the last element that was focussed before the modal opened.</p>
-                            <p>Here are some links so you can test focus moving around:</p>
-                            <ul>
-                                <li><a href="#">My website</a></li>
-                                <li><a href="#">Your website</a></li>
-                                <li><a href="#">Their website</a></li>
-                                <li><a href="#">Our website</a></li>
-                            </ul>
-                            <button class="modal-close">OK</button>
-                            <button class="modal-close button-cancel">Cancel</button>
-                    </div>
-                    <div class="modal-overlay"></div>
-                    </div>
-                    <!--calendar-->
-                    <div class="calendar">
-                        <img src="calendar.svg" alt="Calendar">
-                    </div>
-                    <div class="divider"></div>
-                    <!--profile-->
-                    <div class="user">
-                        <img src="user.svg" alt="User">
-                    </div>
-                </header>
-            </div>
-            <!--end of header-->
-
-            <!--start of content-->
-            <!--start of dashboard-->
-            <div class="dashboard">
-                <div class="date-container">
-                    <div class="date-item active" onclick="dateClicked(0)">Mon<br>06</br></div>
-                    <div class="date-item" onclick="dateClicked(1)">Tue<br>07</br></div>
-                    <div class="date-item" onclick="dateClicked(2)">Wed<br>08</br></div>
-                    <div class="date-item" onclick="dateClicked(3)">Thu<br>09</br></div>
-                    <div class="date-item" onclick="dateClicked(4)">Fri<br>10</br></div>
-                    <div class="date-item" onclick="dateClicked(5)">Sat<br>11</br></div>
-                    <div class="date-item" onclick="dateClicked(6)">Sun<br>12</br></div>
-                </div>
-            </div>
-            <!--end of dashboard-->
-            <!--start of main-->
-            <div class="main">
-                <!--start of new task-->
-                <div class="new">
-                    <a href="window.html" target="_top" class="new"><button onclick="openPopup()">+</button></a>
-                    <!--pop up window code-->
-                </div>
-                <!--end of new task-->
-                <!--start of task page-->
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-hour">9 AM</div>
-                        <div class="timeline-hour">10 AM</div>
-                        <div class="timeline-hour">11 AM</div>
-                        <div class="timeline-hour">12 PM</div>
-                        <div class="timeline-hour">1 PM</div>
-                        <div class="timeline-hour">2 PM</div>
-                        <div class="timeline-hour">3 PM</div>
-                        <div class="timeline-hour">4 PM</div>
-                        <div class="timeline-hour">5 PM</div>
-                        <div class="timeline-hour">6 PM</div>
-                        <div class="timeline-hour">7 PM</div>
-                        <div class="timeline-hour">8 PM</div>
-                        <div class="timeline-hour">9 PM</div>
-                        <div class="timeline-hour">10 PM</div>
-                        <div class="timeline-hour">11 PM</div>
-                        <div class="timeline-hour">12 AM</div>
-                        <div class="timeline-hour">1 AM</div>
-                        <div class="timeline-hour">2 AM</div>
-                        <div class="timeline-hour">3 AM</div>
-                        <div class="timeline-hour">4 AM</div>
-                        <div class="timeline-hour">5 AM</div>
-                        <div class="timeline-hour">6 AM</div>
-                        <div class="timeline-hour">7 AM</div>
-                        <div class="timeline-hour">8 AM</div>
-                    </div>
-                    <div class="page-content">
-                        <div class="header2">Tasks</div>
-                        <div class="content-categories">
-                            <div class="label-wrapper">
-                                <input class="nav-item" name="nav" type="radio" id="nav-1" checked>
-                                <label class="category" for="opt-1">important</label>
-                                <div class="right-content">
-                                    <div class="task-box yellow">
-                                        <div class="description-task">
-                                            <div class="time">08:00 - 9:00 AM</div>
-                                            <div class="task-name">Product Review</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="book.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box blue">
-                                        <div class="description-task">
-                                            <div class="time">10:00 - 11:00 AM</div>
-                                            <div class="task-name">Design Meeting</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="#" alt="back"></div>
-                                    </div>
-                                    <div class="task-box red">
-                                        <div class="description-task">
-                                            <div class="time">12:00 - 1:00 PM</div>
-                                            <div class="task-name">Date</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="Food.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box green">
-                                        <div class="description-task">
-                                            <div class="time">2:00 - 3:00 PM</div>
-                                            <div class="task-name">Release event</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="stu.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box blue">
-                                        <div class="description-task">
-                                            <div class="time">4:00 - 5:00 PM</div>
-                                            <div class="task-name">Wildside meetup</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="Hobby.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box yellow">
-                                        <div class="description-task">
-                                            <div class="time">6:00 - 7:00 PM</div>
-                                            <div class="task-name">Practise</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="#" alt="back"></div>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="label-wrapper">
-                                <input class="nav-item" name="nav" type="radio" id="nav-2">
-                                <label class="category" for="opt-2">completed</label>
-                                <div class="right-content">
-                                    <div class="task-box yellow">
-                                        <div class="description-task">
-                                            <div class="time">08:00 - 9:00 AM</div>
-                                            <div class="task-name">Product Review</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="book.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box blue">
-                                        <div class="description-task">
-                                            <div class="time">10:00 - 11:00 AM</div>
-                                            <div class="task-name">Design Meeting</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="#" alt="back"></div>
-                                    </div>
-                                    <div class="task-box red">
-                                        <div class="description-task">
-                                            <div class="time">12:00 - 1:00 PM</div>
-                                            <div class="task-name">Date</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="Food.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box green">
-                                        <div class="description-task">
-                                            <div class="time">2:00 - 3:00 PM</div>
-                                            <div class="task-name">Release event</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="stu.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box blue">
-                                        <div class="description-task">
-                                            <div class="time">4:00 - 5:00 PM</div>
-                                            <div class="task-name">Wildside meetup</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="Hobby.svg" alt="back"></div>
-                                    </div>
-                                    <div class="task-box yellow">
-                                        <div class="description-task">
-                                            <div class="time">6:00 - 7:00 PM</div>
-                                            <div class="task-name">Practise</div>
-                                        </div>
-                                        <div class="more-button"></div>
-                                        <div class="background"><img src="#" alt="back"></div>
-                                    </div>
-                                </div>
-                             </div>
-                             <div class="label-wrapper">
-                                    <input class="nav-item" name="nav" type="radio" id="nav-3">
-                                    <label class="category" for="opt-3">pending</label>
-                                    <div class="right-content">
-                                        <div class="task-box yellow">
-                                            <div class="description-task">
-                                                <div class="time">08:00 - 9:00 AM</div>
-                                                <div class="task-name">Product Review</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="book.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box blue">
-                                            <div class="description-task">
-                                                <div class="time">10:00 - 11:00 AM</div>
-                                                <div class="task-name">Design Meeting</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="#" alt="back"></div>
-                                        </div>
-                                        <div class="task-box red">
-                                            <div class="description-task">
-                                                <div class="time">12:00 - 1:00 PM</div>
-                                                <div class="task-name">Date</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="Food.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box green">
-                                            <div class="description-task">
-                                                <div class="time">2:00 - 3:00 PM</div>
-                                                <div class="task-name">Release event</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="stu.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box blue">
-                                            <div class="description-task">
-                                                <div class="time">4:00 - 5:00 PM</div>
-                                                <div class="task-name">Wildside meetup</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="Hobby.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box yellow">
-                                            <div class="description-task">
-                                                <div class="time">6:00 - 7:00 PM</div>
-                                                <div class="task-name">Practise</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="#" alt="back"></div>
-                                        </div>
-                                    </div>
-                             </div>
-                             <div class="label-wrapper">
-                                    <input class="nav-item" name="nav" type="radio" id="nav-4">
-                                    <label class="category" for="opt-4">all</label>
-                                    <div class="right-content">
-                                        <div class="task-box yellow">
-                                            <div class="description-task">
-                                                <div class="time">08:00 - 9:00 AM</div>
-                                                <div class="task-name">Product Review</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="book.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box blue">
-                                            <div class="description-task">
-                                                <div class="time">10:00 - 11:00 AM</div>
-                                                <div class="task-name">Design Meeting</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="#" alt="back"></div>
-                                        </div>
-                                        <div class="task-box red">
-                                            <div class="description-task">
-                                                <div class="time">12:00 - 1:00 PM</div>
-                                                <div class="task-name">Date</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="Food.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box green">
-                                            <div class="description-task">
-                                                <div class="time">2:00 - 3:00 PM</div>
-                                                <div class="task-name">Release event</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="stu.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box blue">
-                                            <div class="description-task">
-                                                <div class="time">4:00 - 5:00 PM</div>
-                                                <div class="task-name">Wildside meetup</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="Hobby.svg" alt="back"></div>
-                                        </div>
-                                        <div class="task-box yellow">
-                                            <div class="description-task">
-                                                <div class="time">6:00 - 7:00 PM</div>
-                                                <div class="task-name">Practise</div>
-                                            </div>
-                                            <div class="more-button"></div>
-                                            <div class="background"><img src="#" alt="back"></div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--end of main-->
-    </body>
+</body>
 </html>
