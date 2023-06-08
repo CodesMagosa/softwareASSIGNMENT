@@ -30,7 +30,7 @@
 				</div>
 				<div class="nav-left">
 					<a href="#home"><span class="ion-ios-home-outline"></span> Home</a>
-					<a href="#alarm"><span class="ion-ios-list-outline"></span> Alarm</a>
+					<a href="#alarm"><span class="ion-ios-list-outline"></span> Tasks</a>
 					<a href="#compose"><span class="ion-ios-compose-outline"></span> Compose</a>
 					<a href="#chats"><span class="ion-ios-chatboxes-outline"></span> Chats</a>
 					<a href="#profile"><span class="ion-ios-person-outline"></span> Profile</a>
@@ -96,22 +96,26 @@
 				</div>
 			</div>
 			<div class="html compose">
+                <!--php back end-->
+
+            <!--php back end-->
 				<div class="forms">
+					<form method= "post" action="tasker.php">
 					<div class="group clearfix slideInRight animated">
 						<label class="pull-left" for="compose-time"><span class="ion-ios-time-outline"></span> Time</label>
-						<input class="pull-right" id="compose-time" type="time">
+						<input class="pull-right" id="compose-time" type="time" name="list_time">
 					</div>
 					<div class="group clearfix slideInLeft animated">
 						<label class="pull-left" for="compose-date"><span class="ion-ios-calendar-outline"></span> Date</label>
-						<input class="pull-right" id="compose-date" type="date">
+						<input class="pull-right" id="compose-date" type="date" name="list_date">
 					</div>
 					<div class="group clearfix slideInRight animated">
 						<label class="pull-left" for="compose-title"><span class="ion-ios-paper-outline"></span> Title</label>
-						<input class="pull-right" id="compose-title" type="text">
+						<input class="pull-right" id="compose-title" type="text" name="list_name">
 					</div>
 					<div class="group clearfix slideInLeft animated">
 						<label class="visible" for="compose-detail"><span class="ion-ios-list-outline"></span> Task</label>
-						<textarea class="visible" id="compose-detail" rows="3"></textarea>
+						<textarea class="visible" id="compose-detail" rows="3" name="list_decription"></textarea>
 					</div>
 					<div class="action flipInY animated">
 						<button class="btn">Compose</button>
@@ -253,3 +257,19 @@
 
 </body>
 </html>
+
+
+<?php
+if (isset($_POST['list_name']) && isset($_POST['list_decription']) && isset($_POST['list_date']) && isset($_POST['list_time'])) {
+	$list_name = $_POST['list_name'];
+	$list_decription = $_POST['list_decription'];
+	$list_date = $_POST['list_date'];
+	$list_time = $_POST['list_time'];
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "tasker";
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	$sql = "INSERT INTO list (list_name, list_decription, list_date, list_time) VALUES ('$list_name', '$list_decription', '$list_date', '$list_time')";
+	$conn->close();
+}

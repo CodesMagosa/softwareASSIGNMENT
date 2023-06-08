@@ -753,43 +753,6 @@ body {
   transform: scale(0.5) rotate(10deg);
 }
 
-.profile .photo:hover .social,
-.profile .photo:hover:after {
-  transform: scale(1);
-}
-
-.profile .photo:hover .social .soc-count-1 {
-  transform: translate(0, -50px);
-}
-
-.profile .photo:hover .social .soc-count-2 {
-  transform: translate(-35px, -35px);
-}
-
-.profile .photo:hover .social .soc-count-3 {
-  transform: translate(-50px, 0);
-}
-
-.profile .photo:hover .social .soc-count-4 {
-  transform: translate(-35px, 35px);
-}
-
-.profile .photo:hover .social .soc-count-5 {
-  transform: translate(0, 50px);
-}
-
-.profile .photo:hover .social .soc-count-6 {
-  transform: translate(35px, 35px);
-}
-
-.profile .photo:hover .social .soc-count-7 {
-  transform: translate(50px, 0);
-}
-
-.profile .photo:hover .social .soc-count-8 {
-  transform: translate(35px, -35px);
-}
-
 .profile .details .heading {
   padding: 5px;
   margin: 10px 0;
@@ -813,7 +776,7 @@ body {
 
 .profile .details .text {
   margin: 0;
-  color: #ccc;
+  color: #fff;
   line-height: 24px;
   text-align: center;
   -webkit-animation-duration: 0.4s;
